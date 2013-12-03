@@ -132,10 +132,10 @@ $(document).ready(function(){
 	function displayPosition(position) {
 	    postdata['lat'] = position.coords.latitude;
 	    postdata['long'] = position.coords.longitude;
-	    
-	    var plc = ["Blue Spoon Coffee","Statue of Liberty","Brooklyn Bridge","Times Square","Rockefeller Center","Grand Central Terminal","Wall Street"]
-	    var lat = ["40.714353","40.689249","40.701399","40.758895","40.758742","40.752998","37.430313"];
-	    var lng = ["-74.005973","-74.044500","-73.991114","-73.985131"," -73.978672","-73.977056","-84.000771"];
+
+	    var plc = ["Washington Square Park","Time Warner Center","The Gerswin Hotel","Broad Canal Walk","Last Rites Tattoo Theatre"]
+	    var lat = ["40.730828","40.768592","40.7439","42.362716","40.754312"];
+	    var lng = ["-73.997333","-73.983049","-73.987057","-71.080666","-74.000301"];
 	    randomNumber = Math.floor(Math.random()*plc.length);
 	    
 	    $("#location").html('<i class="icon-map-marker"></i> &nbsp;&nbsp;' + plc[randomNumber]); 

@@ -97,7 +97,6 @@
 				<li><a href="/channel/tech/">Tech</a></li>
 				<li><a href="/channel/video-games/">Video Fames</a></li>
 				<li><a href="/channel/pets/">Pets</a></li>
-				<li><a href="/channel/all/">All</a></li>
 			    </ul>
 			</li>
 		    </ul>
