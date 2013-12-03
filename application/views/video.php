@@ -9,38 +9,41 @@
 					<source src="<?= $video->videoUrl ?>" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
-				<ul class="summary-list">
-					<li>
-					    <a href="javascript:;">
-						<i class=" icon-shopping-cart text-primary"></i>
-						1 Purchase
-					    </a>
-					</li>
-					<li>
-					    <a href="javascript:;">
-						<i class="icon-envelope text-info"></i>
-						15 Emails
-					    </a>
-					</li>
-					<li>
-					    <a href="javascript:;">
-						<i class=" icon-picture text-muted"></i>
-						2 Photo Upload
-					    </a>
-					</li>
-					<li>
-					    <a href="javascript:;">
-						<i class="icon-tags text-success"></i>
-						19 Sales
-					    </a>
-					</li>
-					<li>
-					    <a href="javascript:;">
-						<i class="icon-microphone text-danger"></i>
-						4 Audio
-					    </a>
-					</li>
-				    </ul>
+				<div class="row state-overview">
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol terques">
+                              <i class="icon-user"></i>
+                          </div>
+                          <div class="value">
+                              <h1>CNET</h1>
+                              <p>Channel</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol red">
+                              <i class="icon-tags"></i>
+                          </div>
+                          <div class="value">
+                              <h1>News</h1>
+                              <p>Category</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-6 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol yellow">
+                              <i class="icon-shopping-cart"></i>
+                          </div>
+                          <div class="value">
+                              <h1>2/13/2013</h1>
+                              <p>Date</p>
+                          </div>
+                      </section>
+                  </div>
+              </div>
 			</div>
 		</section>
 	</div>

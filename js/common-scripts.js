@@ -138,7 +138,7 @@ $(document).ready(function(){
 	    var lng = ["-74.005973","-74.044500","-73.991114","-73.985131"," -73.978672","-73.977056","-84.000771"];
 	    randomNumber = Math.floor(Math.random()*plc.length);
 	    
-	    $("#location").html(plc[randomNumber]); 
+	    $("#location").html('<i class="icon-map-marker"></i> &nbsp;&nbsp;' + plc[randomNumber]); 
 	    
 	    postdata['lat'] = lat[randomNumber];
 	    postdata['long'] = lng[randomNumber];

@@ -39,7 +39,7 @@
                   </div>
 
 		<!--logo start-->
-		<a href="/" class="logo" >high<span>5</span> video</a>
+		<a href="/" class="logo" ><img src="/img/high5LogoVer1_77x77.jpg" height="37" /> high<span>5</span> video</a>
 		<!--logo end-->
 		
 		<div class="nav notify-row" id="top_menu"></div>
@@ -65,7 +65,7 @@
                           </a>
                           <ul class="dropdown-menu extended logout">
                               <div class="log-arrow-up"></div>
-                              <li><a href="login.html"><i class="icon-key"></i>Change Location</a></li>
+                              <li><a href="/"><i class="icon-key"></i>Change Location</a></li>
                           </ul>
 			</li>
 			<!-- user login dropdown end -->
