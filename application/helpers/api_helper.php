@@ -167,5 +167,18 @@
 	        }
 	    }
 	}
-			
+	
+	function getVideo($videoId) {
+		if(is_numeric($videoId)) {		
+			$url = "http://api.5min.com/video/$videoId/info.json";
+			$response = file_get_contents($url);
+			$output = json_decode($response);
+			if(isset($output->items[0])) {
+				return $output->items[0];
+			} else {
+				return null;
+			}
+		}
+		return null;
+	}	
 ?>
