@@ -18,7 +18,7 @@
     <link href="/css/style-responsive.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/css/gallery.css" />
     <style>
-	.grid figcaption h3{float: left;width: 75%;}
+	.grid figcaption h3{font-size: 14px;line-height: 18px;}
     </style>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->

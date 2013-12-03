@@ -18,10 +18,10 @@ class Main extends CI_Controller {
 			$category = "Food";
 		} else if ($time >= "17" && $time < "22") {
 			$welcome_msg = "Good Evening!";
-			$category = "News";
+			$category = "Entertainment";
 		} else if ($time >= "22") {
 			$welcome_msg = "Good Day!";
-			$category = "Entertainment";
+			$category = "Fashion";
 		}
 		
 		$data['welcome_msg'] = $welcome_msg;
