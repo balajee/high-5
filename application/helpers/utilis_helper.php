@@ -55,48 +55,49 @@ function initPartners() {
 	global $prtMap;
 
 	$newsArray = array();
-	$newsArray[0] = new Partner("cnet", "CNET", "lat", "long", "http://on.aol.com/partner/cnet-251736463", "News");
-	$newsArray[1] = new Partner("time", "CNET", "lat", "long", "http://on.aol.com/partner/time-517930617", "News");
+	$newsArray[0] = new Partner("cnet", "CNET", "42.363766", "-71.079521", "http://on.aol.com/partner/cnet-251736463", "News");
+	$newsArray[1] = new Partner("associatedpress", "AP", "40.75332", "-73.99947", "http://on.aol.com/partner/associated-press-516990341", "News");
 
 	$entArray = array();
-	$entArray[0] = new Partner("etonline", "ETonline", "lat", "long", "http://on.aol.com/partner/etonline-517173500", "Entertainment");
-	$entArray[1] = new Partner("huffpost-live", "HuffPost Live", "lat", "long", "http://on.aol.com/partner/hp-live-segments-517394847", "Entertainment");
+	$entArray[0] = new Partner("e!", "E! Online", "33.563962", "-112.059585", "http://on.aol.com/partner/e--280071933", "Entertainment");
+	$entArray[1] = new Partner("splashnews", "Splash News", "40.728381", "-73.993696", "http://on.aol.com/partner/splashnews-246666329", "Entertainment");
 
 	$fashArray = array();
-	$fashArray[0] = new Partner("elle", "ELLE", "lat", "long", "http://on.aol.com/partner/elle-517835012", "Fashion");
-	$fashArray[1] = new Partner("popsugar", "POPSUGAR Celebrity", "lat", "long", "http://on.aol.com/partner/popsugar-fashion-271104134", "Fashion");
+	$fashArray[0] = new Partner("elle", "ELLE", "40.766875", "-73.983675", "http://on.aol.com/partner/elle-517835012", "Fashion");
+	$fashArray[1] = new Partner("birchbox", "BIRCHBOX", "40.744103", "-73.984855", "http://on.aol.com/partner/birchbox-517685889", "Fashion");
 
-	$prtMap["News"] = $newsArray;
-	$prtMap["Entertainment"] = $entArray;
-	$prtMap["Fashion"] = $fashArray;
+	$prtMap["news"] = $newsArray;
+	$prtMap["entertainment"] = $entArray;
+	$prtMap["fashion"] = $fashArray;
 
 	//print_r($prtMap);
 }
 
 function getPartners($cat) {
+	$partner = null;
 	global $prtMap;
-	return $prtMap[$cat];
+	if(array_key_exists($cat, $prtMap)) {
+		$partner = $prtMap[$cat];
+	}
+	return $partner;
 }
-
-//echo "<br/><br/>";
-//print_r (getPartners("News"));
-
-// User Current Location
-$ulat = "40.689249";
-$ulong = "-74.044500";
 
 function getNearPartner($cat,$ulat,$ulong){
 	$distMap = array();
 	$catPartners = getPartners($cat);
+	if($catPartners==null) {
+		return null;
+	}
 	foreach($catPartners as $cp){
 		$pLat = $cp->lat;
 		$pLong = $cp->long;
 		$dist = findDistance($ulat, $ulong, $pLat, $pLong);
-		$distMap[$cp] = $dist;
+		$distMap[$cp->id] = $dist;
 	}
     asort($distMap);
     //print_r($distMap);
-    //return array_keys($distMap)[0];
+	$keys = array_keys($distMap);
+    return $keys[0];
 }
 
 class Partner

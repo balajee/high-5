@@ -1,6 +1,6 @@
 
 
-<script>var ajaxurl="/channel/getRecommendation/";</script>
+<script>var ajaxurl="/channel/getRecommendation/<?= $channel ?>/";</script>
 
 <div id="recommend_mn" class="row">
 	<div class="col-lg-12">

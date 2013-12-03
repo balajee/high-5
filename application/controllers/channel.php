@@ -6,60 +6,28 @@ class Channel extends CI_Controller {
 		$this->layout="Yes";
 		
 		$records = getCategoryResults($channel);
+
+		$data['channel'] = $channel;
 		
 		$data['records'] = $records;
 		
 		$this->load->view('channel',$data);
 	}
 
-	public function getRecommendation ($val = null) {
-		$initKeyword = "";
-		if ($val=="") {
+	public function getRecommendation ($cat = null) {
 		
-			$nearBy = getNearBy($_POST['lat'],$_POST['long']);
-			$data['nearBy'] = $nearBy;
+		//echo $cat . $_POST['lat'] . $_POST['long'];
+		$partner = getNearPartner($cat, $_POST['lat'],$_POST['long']);
+		if ($partner!=null) {
+			//echo $partner . "<br/>";
+			$records = getStudioResults($partner);
 			
-			
-			if (sizeof($nearBy)>0) {
-				// print_r($nearBy);
-				
-				$keywords = array();
-				
-				if (isset($nearBy->searchResults)) {
-				
-					foreach ($nearBy->searchResults as $results) {
-						
-						$keywords[] =  $results->fields->group_sic_code_name ;
-					}
-					$uniqueKeywords = "";
-					if (sizeof($keywords)>0) {
-						$uniqueKeywords = getUniqueVal($keywords);
-					}
-					
-					if (sizeof($uniqueKeywords)>0) {
-						$initKeyword = reset($uniqueKeywords);
-					}
-					
-					$data['uniqueKeywords'] = "";
-				}
-				
-				
-				
+			if (sizeof($records) > 0) {
+				$data['records'] = $records;
 			}
-		
-		} else {
-			$initKeyword = $val;
+			$data['uniqueKeywords'] = "";
+			$this->layout="No";
+			$this->load->view('surrogate',$data);
 		}
-		
-		$initKeyword = str_replace("(all)", "", $initKeyword);
-		
-		if ($initKeyword!="") {
-			$records = getSearchResults($initKeyword);
-			if (sizeof($records) > 0) $data['records'] = $records;
-		}
-		
-		
-		$this->layout="No";
-		$this->load->view('surrogate',$data);
 	}
 }
