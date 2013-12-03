@@ -4,12 +4,12 @@ class Video extends CI_Controller {
 
 	public function index($videoId) {
 		$this->layout="Yes";
-		$video = getVideo($videoId);
+		$output = getVideo($videoId);
 
-		if(!isset($video->id)) {
+		if(!isset($output->items[0]->id)) {
 			header("Location: /");
 			exit;
 		}
-		$this->load->view('video', array("video" => $video));
+		$this->load->view('video', array("video" => $output->items[0], "related" => $output->items[0]->related));
 	}
 }

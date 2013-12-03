@@ -191,11 +191,11 @@
 	
 	function getVideo($videoId) {
 		if(is_numeric($videoId)) {		
-			$url = "http://api.5min.com/video/$videoId/info.json";
+			$url = "http://api.5min.com/video/$videoId/info.json?num_related_return=3";
 			$response = file_get_contents($url);
 			$output = json_decode($response);
 			if(isset($output->items[0])) {
-				return $output->items[0];
+				return $output;
 			} else {
 				return null;
 			}

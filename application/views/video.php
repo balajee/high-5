@@ -46,5 +46,26 @@
               </div>
 			</div>
 		</section>
+		<section class="panel">
+			<header class="panel-heading">Related Videos</header>
+			<div class="panel-body">
+				<? if ($related) { ?>
+					<ul class="grid cs-style-3">
+					<?foreach ($related as $record) { ?>
+						<li>
+							<a href="/video/<?= $record->id ?>/">
+							<figure>
+								<img src="<?= $record->thumbnails[0]->url ?>">
+								<figcaption>
+									<h3><?= $record->title ?></h3>
+								</figcaption>
+							</figure>
+							</a>
+						</li>
+					<? } ?>
+					</ul>
+				<? } ?>
+			</div>
+		</section>
 	</div>
 </div>
