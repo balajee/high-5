@@ -27,6 +27,10 @@
 	<script src="/js/respond.min.js"></script>
     <![endif]-->
     <script>var ajaxurl="/main/getRecommendation/";</script>
+    <script>var demo = true;</script>
+    <? if (isset($_GET['demo']) && $_GET['demo']!="") { ?>
+    <script>demo = false;</script>
+    <? } ?>
 </head>
 
 <body class="boxed-page">

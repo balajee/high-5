@@ -132,17 +132,20 @@ $(document).ready(function(){
 	function displayPosition(position) {
 	    postdata['lat'] = position.coords.latitude;
 	    postdata['long'] = position.coords.longitude;
+	    postdata['place'] = "";
 
 	    var plc = ["Washington Square Park","Time Warner Center","The Gerswin Hotel","Broad Canal Walk","Last Rites Tattoo Theatre"]
 	    var lat = ["40.730828","40.768592","40.7439","42.362716","40.754312"];
 	    var lng = ["-73.997333","-73.983049","-73.987057","-71.080666","-74.000301"];
 	    randomNumber = Math.floor(Math.random()*plc.length);
 	    
-	    $("#location").html('<i class="icon-map-marker"></i> &nbsp;&nbsp;' + plc[randomNumber]); 
+	    if (demo) {
+		$("#location").html('<i class="icon-map-marker"></i> &nbsp;&nbsp;' + plc[randomNumber]); 
+		postdata['lat'] = lat[randomNumber];
+		postdata['long'] = lng[randomNumber];
+		postdata['place'] = plc[randomNumber];
+	    }
 	    
-	    postdata['lat'] = lat[randomNumber];
-	    postdata['long'] = lng[randomNumber];
-	    postdata['place'] = plc[randomNumber];
 	    
 	    $("#recommend i").addClass("icon-spinner icon-spin");
 	    $.ajax({
