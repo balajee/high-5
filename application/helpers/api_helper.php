@@ -106,7 +106,7 @@
 		
 		$ci=& get_instance();
 		
-		$apiurl = "http://api.5min.com/studio/".urlencode($studio)."/videos.json?&thumbnail_sizes=true";
+		$apiurl = "http://api.5min.com/studio/".urlencode($studio)."/videos.json?&thumbnail_sizes=true&num_of_videos=6";
 		
 		try {	
 			$geocode=file_get_contents($apiurl);
