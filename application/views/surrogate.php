@@ -2,7 +2,7 @@
 <div class="panel-body">
 	<? if (isset($uniqueKeywords)) { ?>
 		<div class="col-lg-12">
-		YOU MIGHT ALSO LIKE : <select id="rec_option" onchange="javascript:changeSel();">
+		RELATED VIDEO NEAR BY YOUR LOCATION : <select id="rec_option" onchange="javascript:changeSel();">
 			<? foreach ($uniqueKeywords as $key => $value) { ?>
 				<? $val = str_replace("(all) ", "", $value); ?>
 				<option value="<?= $val ?>"><?= $val ?></option>
@@ -14,13 +14,14 @@
 	<ul id="response_con" class="grid cs-style-3">
 	<?foreach ($records['items'] as $record) { ?>
 		<li>
+			<a href="/video/<?= $record['id'] ?>/">
 			<figure>
 				<img src="<?= $record['thumbnails'][2]['url'] ?>" alt="img04">
 				<figcaption>
-					<h3><?= $record['title'] ?></h3>
-					<a class="fancybox" rel="group" href="/video/<?= $record['id'] ?>/">View More</a>
+					<h3 style="text-overflow:ellipsis;"><?= $record['title'] ?></h3>
 				</figcaption>
 			</figure>
+			</a>
 		</li>
 	<? } ?>
 	</ul>
