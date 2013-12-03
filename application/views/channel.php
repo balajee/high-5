@@ -10,13 +10,14 @@
 					<ul class="grid cs-style-3">
 					<?foreach ($records['items'] as $record) { ?>
 						<li>
+							<a href="/video/<?= $record['id'] ?>/">
 							<figure>
-								<img src="<?= $record['thumbnails'][2]['url'] ?>" alt="img04">
+								<img src="<?= $record['thumbnails'][2]['url'] ?>">
 								<figcaption>
 									<h3><?= $record['title'] ?></h3>
-									<a class="fancybox" rel="group" href="/video/<?= $record['id'] ?>/">View More</a>
 								</figcaption>
 							</figure>
+							</a>
 						</li>
 					<? } ?>
 					</ul>

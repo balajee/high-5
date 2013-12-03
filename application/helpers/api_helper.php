@@ -102,6 +102,27 @@
 		}
 	}
 	
+	function getStudioResults ($studio) {
+		
+		$ci=& get_instance();
+		
+		$apiurl = "http://api.5min.com/studio/".urlencode($studio)."/videos.json?&thumbnail_sizes=true";
+		
+		try {	
+			$geocode=file_get_contents($apiurl);
+			$output= json_decode($geocode,true);
+			
+			
+			if ($output) {
+				return $output;
+			}
+			
+			
+		} catch (Exception $e) {
+			echo $e;
+		}
+	}
+	
 	
 	
 	function aasort (&$array, $key) {
