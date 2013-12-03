@@ -15,8 +15,6 @@ class Channel extends CI_Controller {
 	}
 
 	public function getRecommendation ($cat = null) {
-		
-		//echo $cat . $_POST['lat'] . $_POST['long'];
 		$partner = getNearPartner($cat, $_POST['lat'],$_POST['long']);
 		if ($partner!=null) {
 			//echo $partner . "<br/>";
@@ -28,6 +26,8 @@ class Channel extends CI_Controller {
 			$data['uniqueKeywords'] = "";
 			$this->layout="No";
 			$this->load->view('surrogate',$data);
+		} else {
+			exit;
 		}
 	}
 }
