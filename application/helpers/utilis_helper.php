@@ -48,11 +48,13 @@
 /* *******      Partner/Studios    ********* */
 
 $prtMap = array();
+$prtFullMap = array();
 
 initPartners();
 
 function initPartners() {
 	global $prtMap;
+	global $prtFullMap;
 
 	$newsArray = array();
 	$newsArray[0] = new Partner("cnet", "CNET", "42.363766", "-71.079521", "http://on.aol.com/partner/cnet-251736463", "News");
@@ -79,7 +81,20 @@ function initPartners() {
 	$prtMap["business"] = $busArray;
 	$prtMap["tech"] = $techArray;
 
+	$prtTempMap = array_merge_recursive( $newsArray, $entArray, $fashArray, $busArray, $techArray);
 	//print_r($prtMap);
+	foreach ( $prtTempMap as $tmpPartner ) {
+		$prtFullMap[$tmpPartner->id] = $tmpPartner;
+	}
+}
+
+function getPartner($id) {
+	$partner = null;
+	global $prtFullMap;
+	if(array_key_exists($id, $prtFullMap)) {
+		$partner = $prtFullMap[$id];
+	}
+	return $partner;
 }
 
 function getPartners($cat) {

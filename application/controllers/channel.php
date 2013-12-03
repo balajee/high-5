@@ -20,6 +20,10 @@ class Channel extends CI_Controller {
 			//echo $partner . "<br/>";
 			$records = getStudioResults($partner);
 			
+			$partnerObj = getPartner($partner);
+			if ($partnerObj != null) {
+				$data['partnerName'] = $partnerObj->name;
+			}
 			if (sizeof($records) > 0) {
 				$data['records'] = $records;
 			}
