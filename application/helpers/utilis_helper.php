@@ -65,14 +65,19 @@ function initPartners() {
 	$fashArray = array();
 	$fashArray[0] = new Partner("elle", "ELLE", "40.766875", "-73.983675", "http://on.aol.com/partner/elle-517835012", "Fashion");
 	$fashArray[1] = new Partner("birchbox", "BIRCHBOX", "40.744103", "-73.984855", "http://on.aol.com/partner/birchbox-517685889", "Fashion");
+	$fashArray[2] = new Partner("lucky", "Lucky Magazine", "40.756086", "-73.985945", "http://on.aol.com/partner/lucky-69785807", "Fashion");
 
 	$busArray = array();
 	$busArray[0] = new Partner("wsjlive", "The Wakk Street Journal", "29.984188", "-95.335437", "http://on.aol.com/partner/wsjlive-517302109", "Business");
+
+	$techArray = array();
+	$techArray[0] = new Partner("mashable", "Mashable", "40.740494", "-73.986734", "http://on.aol.com/partner/mashable-517326556", "Tech");
 
 	$prtMap["news"] = $newsArray;
 	$prtMap["entertainment"] = $entArray;
 	$prtMap["fashion"] = $fashArray;
 	$prtMap["business"] = $busArray;
+	$prtMap["tech"] = $techArray;
 
 	//print_r($prtMap);
 }
