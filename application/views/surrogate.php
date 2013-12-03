@@ -2,7 +2,7 @@
 <div class="panel-body">
 	<? if (isset($uniqueKeywords)) { ?>
 		<div class="col-lg-12">
-		RELATED VIDEO NEAR BY YOUR LOCATION : <? if ($partnerName!="") { echo "(".$partnerName.")" ;} ?>
+		RELATED VIDEO NEAR BY YOUR LOCATION : <? if (isset($partnerName) && $partnerName!="") { echo "(".$partnerName.")" ;} ?>
 		<? if ($uniqueKeywords!="") { ?>
 		<select id="rec_option" onchange="javascript:changeSel();">
 			<? foreach ($uniqueKeywords as $key => $value) { ?>
