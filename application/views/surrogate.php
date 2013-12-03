@@ -19,7 +19,14 @@
 		<li>
 			<a href="/video/<?= $record['id'] ?>/">
 			<figure>
-				<img src="<?= $record['thumbnails'][2]['url'] ?>" alt="img04">
+				<?
+				if (isset($record['thumbnails'][2]['url']) && $record['thumbnails'][2]['url']!="") {
+					$imgurl =  $record['thumbnails'][2]['url'];
+				} else {
+					$imgurl =  $record['thumbnails'][0]['url'];
+				}
+				?>
+				<img src="<?= $imgurl ?>" alt="">
 				<figcaption>
 					<h3 style="text-overflow:ellipsis;"><?= $record['title'] ?></h3>
 				</figcaption>
