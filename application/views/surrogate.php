@@ -2,12 +2,15 @@
 <div class="panel-body">
 	<? if (isset($uniqueKeywords)) { ?>
 		<div class="col-lg-12">
-		RELATED VIDEO NEAR BY YOUR LOCATION : <select id="rec_option" onchange="javascript:changeSel();">
+		RELATED VIDEO NEAR BY YOUR LOCATION :
+		<? if ($uniqueKeywords!="") { ?>
+		<select id="rec_option" onchange="javascript:changeSel();">
 			<? foreach ($uniqueKeywords as $key => $value) { ?>
 				<? $val = str_replace("(all) ", "", $value); ?>
 				<option value="<?= $val ?>"><?= $val ?></option>
 			<? } ?>
 		</select> <i></i>
+		<? } ?>
 		</div><br />
 	<? } ?>
 	

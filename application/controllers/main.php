@@ -7,7 +7,7 @@ class Main extends CI_Controller {
 		$time = date("H");
 		
 		$category = "Entertainment";
-		if ($time < "8") {
+		if ($time > "5" && $time < "8") {
 			$welcome_msg = "Good Morning!";
 			$category = "Fitness";
 		} else if ($time >= "8" && $time < "12") {
@@ -16,12 +16,9 @@ class Main extends CI_Controller {
 		} else if ($time >= "12" && $time < "17") {
 			$welcome_msg = "Good Afternoon!";
 			$category = "Food";
-		} else if ($time >= "17" && $time < "22") {
+		} else {
 			$welcome_msg = "Good Evening!";
 			$category = "Entertainment";
-		} else if ($time >= "22") {
-			$welcome_msg = "Good Day!";
-			$category = "Fashion";
 		}
 		
 		$data['welcome_msg'] = $welcome_msg;
