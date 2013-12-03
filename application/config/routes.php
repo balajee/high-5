@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "main";
+$route['channel/getRecommendation'] = "channel/getRecommendation";
 $route['channel/(:any)'] = "channel/index/$1";
 $route['video/(:any)'] = "video/index/$1"; // With video id
 $route['search'] = "search/index";

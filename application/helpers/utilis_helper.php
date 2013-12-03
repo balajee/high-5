@@ -95,8 +95,8 @@ function getNearPartner($cat,$ulat,$ulong){
 		$distMap[$cp] = $dist;
 	}
     asort($distMap);
-    print_r($distMap);
-    return array_keys($distMap)[0];
+    //print_r($distMap);
+    //return array_keys($distMap)[0];
 }
 
 class Partner
@@ -109,7 +109,7 @@ class Partner
 	public $cat;
 
 	public function __construct($pid, $pname, $plat, $plong, $purl, $pcat) {
-		print $pid . "<br/>";
+		//print $pid . "<br/>";
 		$this->id = $pid;
 		$this->name = $pname;
 		$this->lat = $plat;
