@@ -28,27 +28,60 @@
     <![endif]-->
 </head>
 
-<body class="full-width">
-
+<body class="boxed-page">
+    <div class="container">
     <section id="container" class="">
 	<!--header start-->
 	<header class="header white-bg">
-	    <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		</button>
+	    <div class="container">
+		<div class="sidebar-toggle-box">
+                      <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+                  </div>
 
 		<!--logo start-->
 		<a href="/" class="logo" >high<span>5</span> video</a>
 		<!--logo end-->
-		<div class="horizontal-menu navbar-collapse collapse ">
-		    <ul class="nav navbar-nav">
-			<li><a href="/">Home</a></li>
+		
+		<div class="nav notify-row" id="top_menu"></div>
+		
+		
+		<div class="top-nav ">
+		    <ul class="nav pull-right top-menu">
+			<li>
+			    <form action="/search/">
+				<input type="text" class="form-control search" name="q" placeholder="Video Search" />
+			    </form>
+			</li>
+			
+			<div class="nav notify-row" id="top_menu">
+			</div>
+
+			
+			<!-- user login dropdown start-->
 			<li class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                              <span id="location" class="username"><i class="icon-spinner icon-spin"></i></span>
+                              <b class="caret"></b>
+                          </a>
+                          <ul class="dropdown-menu extended logout">
+                              <div class="log-arrow-up"></div>
+                              <li><a href="login.html"><i class="icon-key"></i>Change Location</a></li>
+                          </ul>
+			</li>
+			<!-- user login dropdown end -->
+		    </ul>
+		</div>
+	    </div>
+	</header>
+	<!--header end-->
+	
+	<aside>
+              <div id="sidebar"  class="nav-collapse ">
+		<ul class="sidebar-menu">
+			<li><a href="/">Home</a></li>
+			<li class="sub-menu active">
 			    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">Channels <b class=" icon-angle-down"></b></a>
-			    <ul class="dropdown-menu">
+			    <ul class="sub">
 				<li><a href="/channel/news/">News</a></li>
 				<li><a href="/channel/entertainment/">Entertainment</a></li>
 				<li><a href="/channel/style/">Style</a></li>
@@ -69,43 +102,12 @@
 			</li>
 		    </ul>
 		</div>
-		<div class="top-nav ">
-		    <ul class="nav pull-right top-menu">
-			<li>
-			    <form action="/search/">
-				<input type="text" class="form-control search" name="q" placeholder="Video Search" />
-			    </form>
-			</li>
-			<!-- user login dropdown start-->
-			<li class="dropdown">
-                          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                              <span id="location" class="username"><i class="icon-spinner icon-spin"></i></span>
-                              <b class="caret"></b>
-                          </a>
-                          <ul class="dropdown-menu extended logout">
-                              <div class="log-arrow-up"></div>
-                              <li><a href="login.html"><i class="icon-key"></i>Change Location</a></li>
-                          </ul>
-			</li>
-			<!-- user login dropdown end -->
-		    </ul>
-		</div>
-	    </div>
-	</header>
-	<!--header end-->
+          </aside>
+	
 	
 	<!--main content start-->
 	<section id="main-content">
 	    <section class="wrapper">
-		<div id="recommend_mn" class="row">
-			<div class="col-lg-12">
-				<section class="panel">
-				    <div class="panel-body">
-					<div id="recommend"><i></i></div>
-				    </div>
-				</section>
-			</div>
-		</div>
 		{body}
             <!-- page end-->
 	    
@@ -113,6 +115,7 @@
 	</section>
       <!--main content end-->
     </section>
+    </div>
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="/js/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -131,5 +134,6 @@
     </script>
     <!--common script for all pages-->
     <script src="/js/common-scripts.js"></script>
+    <script src="/js/category-common-scripts.js"></script>
   </body>
 </html>

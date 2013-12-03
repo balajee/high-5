@@ -110,48 +110,53 @@ var Script = function () {
 
 var postdata=new Object();
 $(document).ready(function(){
-    if (navigator.geolocation) {
-	var timeoutVal = 10 * 1000 * 1000;
-	navigator.geolocation.getCurrentPosition(
-	    displayPosition, 
-	    displayError,
-	    { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
-	);
+    function getHomeRec () {
+	if (navigator.geolocation) {
+	    var timeoutVal = 10 * 1000 * 1000;
+	    navigator.geolocation.getCurrentPosition(
+		displayPosition, 
+		displayError,
+		{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+	    );
+	}
+	function displayError(error) {
+	    var errors = { 
+		  1: 'Permission denied',
+		  2: 'Position unavailable',
+		  3: 'Request timeout'
+	    };
+	    alert("Error: " + errors[error.code]);
+	}
+	function displayPosition(position) {
+	    postdata['lat'] = position.coords.latitude;
+	    postdata['long'] = position.coords.longitude;
+	    
+	    var plc = ["Blue Spoon Coffee","Statue of Liberty","Brooklyn Bridge","Times Square","Rockefeller Center","Grand Central Terminal","Wall Street"]
+	    var lat = ["40.714353","40.689249","40.701399","40.758895","40.758742","40.752998","37.430313"];
+	    var lng = ["-74.005973","-74.044500","-73.991114","-73.985131"," -73.978672","-73.977056","-84.000771"];
+	    randomNumber = Math.floor(Math.random()*plc.length);
+	    
+	    $("#location").html(plc[randomNumber]); 
+	    
+	    postdata['lat'] = lat[randomNumber];
+	    postdata['long'] = lng[randomNumber];
+	    postdata['place'] = plc[randomNumber];
+	    
+	    $("#recommend i").addClass("icon-spinner icon-spin");
+	    $.ajax({
+		    type:'POST',
+		    url: "/main/getRecommendation/",
+		    data:postdata, 
+		    success: function(response) {
+			$("#recommend").html(response);
+		    },
+		    error : function () {
+		    }
+	   });
+	}
     }
-    function displayError(error) {
-	var errors = { 
-	      1: 'Permission denied',
-	      2: 'Position unavailable',
-	      3: 'Request timeout'
-	};
-	alert("Error: " + errors[error.code]);
-    }
-    function displayPosition(position) {
-        postdata['lat'] = position.coords.latitude;
-        postdata['long'] = position.coords.longitude;
-        
-        var plc = ["Blue Spoon Coffee","Statue of Liberty","Brooklyn Bridge","Times Square","Rockefeller Center","Grand Central Terminal","Wall Street"]
-        var lat = ["40.714353","40.689249","40.701399","40.758895","40.758742","40.752998","37.430313"];
-	var lng = ["-74.005973","-74.044500","-73.991114","-73.985131"," -73.978672","-73.977056","-84.000771"];
-        randomNumber = Math.floor(Math.random()*plc.length);
-        
-        $("#location").html(plc[randomNumber]); 
-        
-        postdata['lat'] = lat[randomNumber];
-        postdata['long'] = lng[randomNumber];
-        postdata['place'] = plc[randomNumber];
-        
-        $("#recommend i").addClass("icon-spinner icon-spin");
-        $.ajax({
-                type:'POST',
-                url: "/main/getRecommendation/",
-                data:postdata, 
-                success: function(response) {
-                    $("#recommend").html(response);
-                },
-                error : function () {
-                }
-       });
+    if ($("#recommend_mn").html()!="") {
+	getHomeRec();
     }
 });
 
