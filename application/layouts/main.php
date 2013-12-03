@@ -25,8 +25,8 @@
     <!--[if lt IE 9]>
 	<script src="/js/html5shiv.js"></script>
 	<script src="/js/respond.min.js"></script>
-	<script>var ajaxurl="/main/getRecommendation/";</script>
     <![endif]-->
+    <script>var ajaxurl="/main/getRecommendation/";</script>
 </head>
 
 <body class="boxed-page">
@@ -134,6 +134,5 @@
     </script>
     <!--common script for all pages-->
     <script src="/js/common-scripts.js"></script>
-    <script src="/js/category-common-scripts.js"></script>
   </body>
 </html>
