@@ -77,20 +77,16 @@
 			    </form>
 			</li>
 			<!-- user login dropdown start-->
-			<!--li class="dropdown">
+			<li class="dropdown">
                           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                              <img alt="" src="img/avatar1_small.jpg">
-                              <span class="username">Jhon Doue</span>
+                              <span id="location" class="username"><i class="icon-spinner icon-spin"></i></span>
                               <b class="caret"></b>
                           </a>
                           <ul class="dropdown-menu extended logout">
                               <div class="log-arrow-up"></div>
-                              <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
-                              <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-                              <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
-                              <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                              <li><a href="login.html"><i class="icon-key"></i>Change Location</a></li>
                           </ul>
-			</li-->
+			</li>
 			<!-- user login dropdown end -->
 		    </ul>
 		</div>

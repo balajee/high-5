@@ -2,7 +2,7 @@
 <div class="panel-body">
 	<? if (isset($uniqueKeywords)) { ?>
 		<div class="col-lg-12">
-		<? if(isset($_POST['place']) && $_POST['place']!="") { echo "(" .$_POST['place'] . ")" ; } ?> YOU MIGHT ALSO LIKE : <select id="rec_option" onchange="javascript:changeSel();">
+		YOU MIGHT ALSO LIKE : <select id="rec_option" onchange="javascript:changeSel();">
 			<? foreach ($uniqueKeywords as $key => $value) { ?>
 				<? $val = str_replace("(all) ", "", $value); ?>
 				<option value="<?= $val ?>"><?= $val ?></option>

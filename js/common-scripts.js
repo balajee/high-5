@@ -130,10 +130,12 @@ $(document).ready(function(){
         postdata['lat'] = position.coords.latitude;
         postdata['long'] = position.coords.longitude;
         
-        var plc = ["Statue of Liberty","Brooklyn Bridge","Times Square","Rockefeller Center","Grand Central Terminal","Wall Street"]
-        var lat = ["40.689249","40.701399","40.758895","40.758742","40.752998","37.430313"];
-	var lng = ["-74.044500","-73.991114","-73.985131"," -73.978672","-73.977056","-84.000771"];
+        var plc = ["Blue Spoon Coffee","Statue of Liberty","Brooklyn Bridge","Times Square","Rockefeller Center","Grand Central Terminal","Wall Street"]
+        var lat = ["40.714353","40.689249","40.701399","40.758895","40.758742","40.752998","37.430313"];
+	var lng = ["-74.005973","-74.044500","-73.991114","-73.985131"," -73.978672","-73.977056","-84.000771"];
         randomNumber = Math.floor(Math.random()*plc.length);
+        
+        $("#location").html(plc[randomNumber]);
         
         postdata['lat'] = lat[randomNumber];
         postdata['long'] = lng[randomNumber];
