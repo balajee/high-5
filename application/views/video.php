@@ -16,7 +16,7 @@
                               <i class="icon-user"></i>
                           </div>
                           <div class="value">
-                              <h1>CNET</h1>
+                              <h1><?= $video->channel ?></h1>
                               <p>Channel</p>
                           </div>
                       </section>
@@ -27,7 +27,7 @@
                               <i class="icon-tags"></i>
                           </div>
                           <div class="value">
-                              <h1>News</h1>
+                              <h1><?= $video->category ?></h1>
                               <p>Category</p>
                           </div>
                       </section>
@@ -38,7 +38,7 @@
                               <i class="icon-shopping-cart"></i>
                           </div>
                           <div class="value">
-                              <h1>2/13/2013</h1>
+                              <h1><?= date("m/d/Y", strtotime($video->pubDate)) ?></h1>
                               <p>Date</p>
                           </div>
                       </section>
