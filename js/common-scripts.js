@@ -147,7 +147,7 @@ $(document).ready(function(){
 	    $("#recommend i").addClass("icon-spinner icon-spin");
 	    $.ajax({
 		    type:'POST',
-		    url: "/main/getRecommendation/",
+		    url: ajaxurl,
 		    data:postdata, 
 		    success: function(response) {
 			$("#recommend").html(response);
