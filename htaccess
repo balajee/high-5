@@ -1,8 +1,5 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-RewriteCond %{HTTP_HOST} ^doktri.com$
-RewriteRule ^(.*)$  http://doktri.launchrock.com  [L]
+
 
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,
