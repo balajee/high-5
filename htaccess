@@ -1,5 +1,10 @@
 <IfModule mod_rewrite.c>
+<<<<<<< HEAD
 
+=======
+    RewriteEngine On
+    RewriteBase /
+>>>>>>> f43f69aa9b1963abea927a2ddcf6cc2dada09c5a
 
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,
@@ -34,3 +39,6 @@ php_flag html_errors off
 
     ErrorDocument 404 /index.php
 </IfModule>  
+
+# Testing git pull/push
+
