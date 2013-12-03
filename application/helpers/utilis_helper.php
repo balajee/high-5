@@ -70,7 +70,7 @@ function initPartners() {
 	$fashArray[2] = new Partner("lucky", "Lucky Magazine", "40.756086", "-73.985945", "http://on.aol.com/partner/lucky-69785807", "Fashion");
 
 	$busArray = array();
-	$busArray[0] = new Partner("wsjlive", "The Wakk Street Journal", "29.984188", "-95.335437", "http://on.aol.com/partner/wsjlive-517302109", "Business");
+	$busArray[0] = new Partner("wsjlive", "The Wall Street Journal", "29.984188", "-95.335437", "http://on.aol.com/partner/wsjlive-517302109", "Business");
 
 	$techArray = array();
 	$techArray[0] = new Partner("mashable", "Mashable", "40.740494", "-73.986734", "http://on.aol.com/partner/mashable-517326556", "Tech");
