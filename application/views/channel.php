@@ -1,3 +1,18 @@
+
+
+<script>var ajaxurl="/channel/getRecommendation/";</script>
+
+<div id="recommend_mn" class="row">
+	<div class="col-lg-12">
+		<section class="panel">
+		    <div class="panel-body">
+			<div id="recommend"><i></i></div>
+		    </div>
+		</section>
+	</div>
+</div>
+
+
 <div class="row">
 	<div class="col-lg-12">
 		
