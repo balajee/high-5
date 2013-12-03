@@ -46,7 +46,6 @@
 		
 		$api_url = 'http://www.mapquestapi.com/search/v2/search?key=Dmjtd%7Clu612hurng,as=o5-50zah&maxMatches=10&shapePoints='.$lat.','.$long;
 		
-
 		try {	
 			$geocode=file_get_contents($api_url);
 			$output= json_decode($geocode);
