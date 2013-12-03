@@ -125,7 +125,9 @@ $(document).ready(function(){
 		  2: 'Position unavailable',
 		  3: 'Request timeout'
 	    };
-	    alert("Error: " + errors[error.code]);
+	    // alert("Error: " + errors[error.code]);
+	    $("#top_menu").hide();
+	    
 	}
 	function displayPosition(position) {
 	    postdata['lat'] = position.coords.latitude;
