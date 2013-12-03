@@ -96,7 +96,7 @@ function getNearPartner($cat,$ulat,$ulong){
 	}
     asort($distMap);
     //print_r($distMap);
-    return array_keys($distMap)[0];
+    //return array_keys($distMap)[0];
 }
 
 class Partner
