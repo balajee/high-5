@@ -85,7 +85,7 @@
 		
 		$ci=& get_instance();
 		
-		$apiurl = "http://api.5min.com/search/".urlencode($search)."/videos.json?num_of_videos=3&thumbnail_sizes=true";
+		$apiurl = "http://api.5min.com/search/".urlencode($search)."/videos.json?num_of_videos=3&thumbnail_sizes=true&country=US";
 		
 		try {	
 			$geocode=file_get_contents($apiurl);
