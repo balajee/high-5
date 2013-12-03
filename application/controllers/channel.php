@@ -40,7 +40,7 @@ class Channel extends CI_Controller {
 						$initKeyword = reset($uniqueKeywords);
 					}
 					
-					$data['uniqueKeywords'] = $uniqueKeywords;
+					$data['uniqueKeywords'] = "";
 				}
 				
 				
