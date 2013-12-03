@@ -84,10 +84,9 @@
 			    <ul class="sub">
 				<li><a href="/channel/news/">News</a></li>
 				<li><a href="/channel/entertainment/">Entertainment</a></li>
-				<li><a href="/channel/style/">Style</a></li>
+				<li><a href="/channel/fashion/">Fashion</a></li>
 				<li><a href="/channel/home/">Home</a></li>
 				<li><a href="/channel/parenting/">Parenting</a></li>
-				<li><a href="/channel/relationships/">Relationships</a></li>
 				<li><a href="/channel/food/">Food</a></li>
 				<li><a href="/channel/sports/">Sports</a></li>
 				<li><a href="/channel/health/">Health</a></li>
