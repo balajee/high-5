@@ -116,7 +116,7 @@ $(document).ready(function(){
 	    navigator.geolocation.getCurrentPosition(
 		displayPosition, 
 		displayError,
-		{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+		{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 120000 }
 	    );
 	}
 	function displayError(error) {
