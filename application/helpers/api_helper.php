@@ -14,11 +14,16 @@
 		
 		$key = $ci->config->item('ip2location_key');
 		
-		$api_url = 'http://api.ipinfodb.com/v3/ip-city/?key='.$key.'&ip='.$ci->input->ip_address().'&format=json';
+		$user_ip = $ci->input->ip_address();
+		if ( $user_ip=="::1") {
+		     $user_ip = "121.241.128.145";
+		}
+		
+		$api_url = 'http://api.ipinfodb.com/v3/ip-city/?key='.$key.'&ip='.$user_ip.'&format=json';
 		
 		// $api_url = 'http://api.ipinfodb.com/v3/ip-city/?key='.$key.'&ip=121.241.128.145&format=json';
 		
-		//echo $api_url;
+		// echo $api_url;
 		try {	
 			$geocode=file_get_contents($api_url);
 			$output= json_decode($geocode);
@@ -29,6 +34,11 @@
 				$data['user_countryName'] = $output->countryName;
 				$data['user_latitude'] = $output->latitude;
 				$data['user_longitude'] = $output->longitude;
+				//if ( $ci->input->ip_address()=="::1") {
+				//	$data['timeZone'] = "0:00";
+				//} else {
+					$data['timeZone'] = $output->timeZone;
+				//}
 				return $data;
 			}
 
